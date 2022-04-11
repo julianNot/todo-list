@@ -1,14 +1,22 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Login</router-link> |
+    <router-link to="/tasks">Tareas</router-link>
   </div>
   <router-view/>
 </template>
 
 <style>
-#app {
+:root {
+  --color-background-gray : #eee;
+}
+
+body{
+  background-color: var(--color-background-gray);
   font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+#app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
