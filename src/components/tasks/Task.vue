@@ -1,7 +1,7 @@
 <template>
   <section class="task-card-container">
     <article class="task-elements-container">
-      <span @click="completed(todo)" class="icon-check" :class="setImgTask" ></span>
+    <span @click="completed(todo)" class="icon-check" :class="setImgTask" ></span>
       <span class="index">{{ index }}</span>
       <div v-if="!isEditing" class="text-container">
         <p :class="isCheck">{{ todo.title }}</p>
@@ -12,12 +12,14 @@
       </div>
       <div v-else>
         <input
+          class="field"
           v-bind:value="titleChange"
           @change="todoTitleChange"
           type="text"
           placeholder="titulo"
         />
         <input
+          class="field"
           v-bind:value="descriptChange"
           @change="todoDescripChange"
           type="text"
@@ -97,7 +99,6 @@ export default {
 
 .task-elements-container {
   display: flex;
-  /* border: 1px solid black; */
   border-bottom: 1px solid gray;
   padding: 8px;
 }
@@ -163,8 +164,6 @@ button {
 
 .buttons-container {
   position: relative;
-  /* max-width: 30px; */
-  /* margin-left: 100px; */
 }
 
 .absolute-buttons {

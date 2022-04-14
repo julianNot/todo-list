@@ -1,6 +1,6 @@
 <template>
   <article class="table-content-container">
-    <h2>lista de tareas</h2>
+    <h2>Lista de tareas</h2>
     <section v-for="(todo, index) in allTodos" :key="todo.id">
       <task :todo="todo" :index="index+1" />
     </section>

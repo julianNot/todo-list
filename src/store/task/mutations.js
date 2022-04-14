@@ -12,7 +12,7 @@ export const deleteTodo = ( state, todo ) => {
 }
 
 export const updateTodo = ( state, todo ) => {
-    let index = state.todos.findIndex( t => t.tags == todo.tags )
+    let index = state.todos.findIndex( t => t.id == todo.id )
     if(index != -1){
         console.log(todo);
     }

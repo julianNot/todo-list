@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import {  v4 as uuidv4  } from 'uuid'
 import { mapActions, mapGetters } from "vuex";
 
 export default {
@@ -42,6 +43,7 @@ export default {
     },
     addNewTodo() {
       let todo = {
+        id : uuidv4(),
         isCompleted : this.isCompleted,
         title: this.title,
         descript: this.descript,
@@ -49,6 +51,8 @@ export default {
       };
       this.addTodoAction(todo);
       this.cleanInputs();
+      
+      localStorage.setItem('todos', JSON.stringify(this.allTodos) )
     },
     todoEdit(e) {
       this.title = e.target.value;

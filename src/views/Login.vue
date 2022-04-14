@@ -18,7 +18,8 @@
 </template>
 
 <script>
-// import { mapMutations } from 'vuex'
+import {  v4 as uuidv4  } from 'uuid'
+
 
 export default {
     data(){
@@ -48,13 +49,14 @@ export default {
     beforeCreate(){
         const list = [
             {
-                user : 'julian',
+                user : 'usuario',
                 password : 'prueba',
                 todos : [
                     {
-                        title : 'tarea Julian',
+                        id : uuidv4(),
+                        title : 'tarea de Usuario',
                         descript : ' Vuex',
-                        tags : ['vue', 'hoy'],
+                        tags : ['vue', 'js'],
                         isCompleted : false 
                     }
                 ]
@@ -62,7 +64,22 @@ export default {
             {
                 user : 'admin',
                 password : 'admin',
-                todos : []
+                todos : [
+                    {
+                        id : uuidv4(),
+                        title : 'tarea de admin',
+                        descript : 'Css',
+                        tags : ['html'],
+                        isCompleted : false 
+                    },
+                    {
+                        id : uuidv4(),
+                        title : 'tarea 2',
+                        descript : 'Frontend',
+                        tags : ['Mobil'],
+                        isCompleted : false 
+                    }
+                ]
             }
         ]
         localStorage.setItem('users', JSON.stringify(list) )
